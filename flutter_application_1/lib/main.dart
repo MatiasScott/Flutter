@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
       title: 'EQUIPO',
       theme: ThemeData(
         primarySwatch: Colors.green,
+        visualDensity:
+            VisualDensity.adaptivePlatformDensity, //adaptar a las plataformas
       ),
       home: Scaffold(
           appBar: AppBar(
@@ -27,10 +29,19 @@ class MyApp extends StatelessWidget {
                 child: Container(
                   alignment: Alignment.center,
                   color: Colors.blueGrey,
-                  constraints: BoxConstraints.expand(height: 60),
+                  constraints: BoxConstraints.expand(),
                   child: Text(
-                    "El anti-heroe", //child es una clase hijo d
-                    style: TextStyle(color: Colors.orange, fontSize: 40),
+                    //"El anti-heroe", //child es una clase hijo d
+
+                    //multiline
+                    '''
+                    Bien, valoremos los pros y contras de ser superhéroe
+                    Pro: tienen chicas por montones
+                    Descuentos en lavado en seco
+                    Lucrativos contratos de cine, precuelas y películas con otros superhéroes
+                    Contras: todos son unos ñoños respetuosos de la ley
+                    ''',
+                    style: TextStyle(color: Colors.orange),
                   ),
                 ),
               ),
