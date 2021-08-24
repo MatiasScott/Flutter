@@ -2,7 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:auth_buttons/auth_buttons.dart';
 import 'home.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
+  @override
+  _Login createState() => _Login();
+}
+
+class _Login extends State<Login> {
+  final txtUserName = TextEditingController();
+  final txtPassword = TextEditingController();
+  String userName = "";
+  String password = "";
+
+  void clearText() {
+    txtUserName.clear();
+    txtPassword.clear();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,6 +119,7 @@ class Login extends StatelessWidget {
                         ),
                         new Expanded(
                           child: TextField(
+                            controller: txtUserName,
                             keyboardType: TextInputType.text,
                             decoration: InputDecoration(
                               border: InputBorder.none,
@@ -140,6 +156,7 @@ class Login extends StatelessWidget {
                         ),
                         new Expanded(
                           child: TextField(
+                            controller: txtPassword,
                             obscureText: true,
                             keyboardType: TextInputType.text,
                             decoration: InputDecoration(
@@ -212,8 +229,56 @@ class Login extends StatelessWidget {
                         minWidth: 60.0,
                         height: 30.0,
                         onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Home()));
+                          userName = txtUserName.text;
+                          password = txtPassword.text;
+                          if (userName.isEmpty && password.isEmpty) {
+                            AlertDialog alert = AlertDialog(
+                              title: Text('Campos vacios'),
+                              content: Text(
+                                  "Bro no puedes dejar campos vacios, ayude llenando"),
+                              actions: [
+                                MaterialButton(
+                                  child: Text("OK"),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                )
+                              ],
+                            );
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return alert;
+                                });
+                          } else {
+                            if (userName == "matias" && password == "12345") {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Home()),
+                              );
+                              clearText();
+                            } else {
+                              AlertDialog alert = AlertDialog(
+                                title: Text('Error al iniciar sesion'),
+                                content: Text(
+                                    "El usuario o la contraseña son datos erroneos"),
+                                actions: [
+                                  MaterialButton(
+                                    child: Text("OK"),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                      clearText();
+                                    },
+                                  )
+                                ],
+                              );
+                              showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return alert;
+                                  });
+                            }
+                          }
                         },
                       ),
                     ),
