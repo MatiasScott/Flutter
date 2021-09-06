@@ -6,7 +6,7 @@ class ImgGalery extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 100.0,
-      width: 200,
+      width: 400.0,
       child: ListView(
         padding: EdgeInsets.all(10.0),
         scrollDirection: Axis.horizontal,

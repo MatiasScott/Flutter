@@ -5,7 +5,7 @@ class CarruselGalery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 600.0,
+      height: 400.0,
       child: ListView(
         padding: EdgeInsets.all(40.0),
         scrollDirection: Axis.horizontal,

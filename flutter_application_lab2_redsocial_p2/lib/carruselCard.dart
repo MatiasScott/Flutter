@@ -8,9 +8,9 @@ class CarruselCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final imgCard = Container(
-      height: 400,
-      width: 450,
-      margin: EdgeInsets.only(top: 100.0, left: 20.0, bottom: 150),
+      height: 100,
+      width: 300,
+      margin: EdgeInsets.only(left: 10.0),
       decoration: BoxDecoration(
           border: Border.all(color: Colors.white, width: 10),
           image: DecorationImage(fit: BoxFit.cover, image: AssetImage(imgRuta)),

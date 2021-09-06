@@ -8,14 +8,14 @@ class Home extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.grey[800],
         body: Stack(
-          fit: StackFit.expand,
+          fit: StackFit.loose,
           children: [
             Container(
-              margin: EdgeInsets.only(top: 20),
+              margin: EdgeInsets.only(top: 50),
               child: ImgGalery(),
             ),
             Container(
-              margin: EdgeInsets.only(top: 20),
+              margin: EdgeInsets.only(top: 150.0),
               child: CarruselGalery(),
             ),
             Container(
@@ -23,9 +23,10 @@ class Home extends StatelessWidget {
                 children: [
                   Container(
                     color: Colors.white,
-                    width: 385,
-                    margin: EdgeInsets.only(top: 430, bottom: 50, left: 15),
-                    padding: const EdgeInsets.all(10.0),
+                    width: 390.0,
+                    height: 40.0,
+                    margin:
+                        EdgeInsets.only(top: 520.0, left: 10.0, right: 10.0),
                     child: Row(
                       children: [
                         Text(

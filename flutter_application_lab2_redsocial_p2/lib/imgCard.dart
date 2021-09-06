@@ -9,8 +9,8 @@ class ImgCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final imgCard = Container(
       height: 60.0,
-      width: 60.0,
-      margin: EdgeInsets.only(bottom: 570.0, left: 5.0, right: 10),
+      width: 80.0,
+      margin: EdgeInsets.only(left: 5.0, right: 5.0),
       decoration: BoxDecoration(
           border: Border.all(color: Colors.blue, width: 2),
           image: DecorationImage(fit: BoxFit.cover, image: AssetImage(imgRuta)),
