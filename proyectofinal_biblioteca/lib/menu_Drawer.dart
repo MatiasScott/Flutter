@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'login.dart';
 import 'main.dart';
+import 'info.dart';
 
 class DrawerMenu extends StatelessWidget {
   @override
@@ -207,7 +208,9 @@ class DrawerMenu extends StatelessWidget {
           Divider(),
           ListTile(
             title: Text('App version 1.0.0'),
-            onTap: () {},
+            onTap: () {
+            Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Info()));},
           ),
         ],
       ),
